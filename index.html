@@ -3,523 +3,508 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shubham Khedekar | Senior Art Executive & Visualizer Designer</title>
+    <title>Shubham Khedekar | Portfolio</title>
     <style>
-        /* --- RESET & GLOBAL STYLES --- */
+        /* --- BRAND NEW PREMIUM ESSENTIALS --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
         }
 
         :root {
-            --bg-color: #0a0a0a;
-            --text-color: #ffffff;
-            --accent-color: #ff3e3e; /* Bold crimson accent */
-            --muted-color: #888888;
-            --card-bg: #141414;
-            --border-color: #222222;
+            --bg: #0d0d0d;
+            --text: #ffffff;
+            --accent: #e50914; /* Punchy high-contrast red */
+            --muted: #777777;
+            --border: #1a1a1a;
+            --card-hover: #141414;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: var(--bg);
+            color: var(--text);
             overflow-x: hidden;
-            line-height: 1.5;
+            letter-spacing: -0.02em;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* --- CONTAINER --- */
+        a { color: inherit; text-decoration: none; }
+        
         .container {
-            max-width: 1400px;
+            max-width: 1440px;
             margin: 0 auto;
-            padding: 0 4rem;
+            padding: 0 3rem;
         }
 
-        @media (max-width: 768px) {
-            .container { padding: 0 1.5rem; }
-        }
+        @media (max-width: 768px) { .container { padding: 0 1.5rem; } }
 
-        /* --- NAVIGATION --- */
+        /* --- LOGO & NAV --- */
         nav {
-            padding: 2.5rem 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--border-color);
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border);
         }
 
         .logo {
-            font-weight: 800;
-            font-size: 1.25rem;
-            letter-spacing: -0.05em;
+            font-weight: 900;
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
         }
 
         .nav-links a {
             margin-left: 2rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--muted-color);
-            transition: color 0.3s ease;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+            transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--text-color);
+        .nav-links a:hover { color: var(--text); }
+
+        /* --- COOL HERO SECTION (WITH PROFILE PIC) --- */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            padding: 6rem 0;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
         }
 
-        /* --- HERO SECTION --- */
-        .hero {
-            padding: 8rem 0 6rem 0;
+        .hero-left h1 {
+            font-size: clamp(3.5rem, 7vw, 5.5rem);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -0.04em;
+            margin-bottom: 2rem;
+        }
+
+        .hero-left p {
+            font-size: 1.25rem;
+            color: var(--muted);
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        /* Profile Image Placeholder */
+        .profile-placeholder {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            background: linear-gradient(145deg, #111, #1a1a1a);
+            border: 1px dashed #333;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: border-color 0.4s;
         }
 
-        .hero-tag {
-            font-size: 1rem;
+        .profile-placeholder:hover {
+            border-color: var(--accent);
+        }
+
+        .profile-placeholder span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #444;
+        }
+
+        @media (max-width: 912px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 0; }
+            .profile-placeholder { max-width: 400px; margin: 0 auto; }
+        }
+
+        /* --- SECTIONS LAYOUT --- */
+        .section-title {
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            color: var(--accent-color);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            font-weight: 700;
         }
 
-        .hero h1 {
-            font-size: clamp(3.5rem, 8vw, 6.5rem);
-            line-height: 0.95;
-            font-weight: 900;
-            letter-spacing: -0.04em;
+        .editorial-row {
+            display: grid;
+            grid-template-columns: 0.6fr 1.4fr;
+            gap: 2rem;
+            padding: 5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        @media (max-width: 768px) {
+            .editorial-row { grid-template-columns: 1fr; padding: 3rem 0; }
+        }
+
+        /* --- THE STORY SECTION --- */
+        .story-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-content p {
+            color: var(--muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- WORK EXPERIENCE TIMELINE --- */
+        .timeline-item {
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid #141414;
             margin-bottom: 2.5rem;
         }
 
-        .hero-meta {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 3rem;
-            border-top: 1px solid var(--border-color);
-            padding-top: 2.5rem;
+        .timeline-item:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+            margin-bottom: 0;
         }
 
-        .hero-desc {
-            font-size: 1.5rem;
-            color: var(--muted-color);
-            line-height: 1.4;
-        }
-
-        .stat-box h3 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-        }
-
-        .stat-box p {
-            color: var(--muted-color);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-top: 0.25rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero { padding: 4rem 0; }
-            .hero-meta { grid-template-columns: 1fr; gap: 2rem; }
-        }
-
-        /* --- SECTION HEADINGS --- */
-        .section-header {
-            margin-top: 10rem;
-            margin-bottom: 4rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1.5rem;
+        .time-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
         }
 
-        .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            text-transform: uppercase;
-        }
+        .role-title { font-size: 1.4rem; font-weight: 700; }
+        .company-name { color: var(--accent); font-weight: 600; font-size: 1rem; }
+        .duration { color: var(--muted); font-size: 0.9rem; font-weight: 500; }
+        .job-desc { color: var(--muted); font-size: 1rem; line-height: 1.5; margin-top: 0.5rem; }
 
-        .section-header p {
-            color: var(--muted-color);
-            font-size: 1rem;
-        }
-
-        /* --- WORK GRID (BRANDS) --- */
-        .grid {
+        /* --- GRID GALLERY STYLING (BRANDS & PITCHES) --- */
+        .showcase-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 3rem;
+            gap: 2.5rem;
         }
 
-        @media (max-width: 768px) {
-            .grid { grid-template-columns: 1fr; gap: 2rem; }
-        }
-
-        .project-card {
-            display: flex;
-            flex-direction: column;
-            group;
-        }
-
-        .image-container {
-            width: 100%;
-            aspect-ratio: 16 / 10;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: border-color 0.3s ease;
-        }
-
-        .project-card:hover .image-container {
-            border-color: var(--muted-color);
-        }
-
-        /* Placeholder graphic styling */
-        .placeholder-text {
-            color: #333;
-            font-size: 1.25rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transition: color 0.3s ease;
-        }
-
-        .project-card:hover .placeholder-text {
-            color: var(--text-color);
-        }
-
-        .project-info {
-            margin-top: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        .project-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .project-category {
-            color: var(--muted-color);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-top: 0.25rem;
-        }
-
-        /* --- PITCH WORK SECTION --- */
-        .pitch-grid {
+        .pitch-style-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
 
         @media (max-width: 992px) {
-            .pitch-grid { grid-template-columns: repeat(2, 1fr); }
+            .pitch-style-grid { grid-template-columns: repeat(2, 1fr); }
         }
-        @media (max-width: 576px) {
-            .pitch-grid { grid-template-columns: 1fr; }
-        }
-
-        .pitch-card .image-container {
-            aspect-ratio: 1 / 1; /* Square format for quick placeholders */
+        @media (max-width: 650px) {
+            .showcase-grid, .pitch-style-grid { grid-template-columns: 1fr; }
         }
 
-        .pitch-card .project-title {
-            font-size: 1.1rem;
+        .card {
+            display: flex;
+            flex-direction: column;
         }
 
-        /* --- FOOTER / CONTACT --- */
+        .img-slot {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            background-color: #111;
+            border: 1px solid var(--border);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .card:hover .img-slot {
+            background-color: var(--card-hover);
+            border-color: #444;
+            transform: translateY(-4px);
+        }
+
+        .slot-lbl {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        .card:hover .slot-lbl { color: var(--text); }
+
+        .card-details {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .card-title { font-size: 1.15rem; font-weight: 700; }
+        .card-cat { color: var(--muted); font-size: 0.85rem; text-transform: uppercase; }
+
+        /* --- FOOTER --- */
         footer {
-            margin-top: 12rem;
-            padding: 5rem 0;
-            border-top: 1px solid var(--border-color);
+            padding: 8rem 0 4rem 0;
             text-align: center;
         }
 
-        .footer-cta {
-            font-size: clamp(2rem, 5vw, 4rem);
+        .cta-text {
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 900;
-            letter-spacing: -0.03em;
             margin-bottom: 3rem;
+            letter-spacing: -0.03em;
         }
 
-        .footer-cta a:hover {
-            color: var(--accent-color);
-            transition: color 0.3s ease;
-        }
-
-        .social-links {
+        .links-wrap {
             display: flex;
             justify-content: center;
             gap: 3rem;
-            flex-wrap: wrap;
+            margin-bottom: 4rem;
         }
 
-        .social-links a {
-            font-size: 1.1rem;
+        .links-wrap a {
             font-weight: 600;
-            color: var(--muted-color);
-            transition: color 0.3s ease;
+            color: var(--muted);
+            transition: color 0.2s;
         }
 
-        .social-links a:hover {
-            color: var(--text-color);
-        }
-
-        .copyright {
-            margin-top: 4rem;
-            font-size: 0.85rem;
-            color: #444;
-        }
+        .links-wrap a:hover { color: var(--text); }
+        .copy { font-size: 0.8rem; color: #333; }
     </style>
 </head>
 <body>
 
-    <!-- CONTAINER START -->
     <div class="container">
-        
         <!-- NAVIGATION -->
         <nav>
-            <div class="logo">SK // DESIGN</div>
+            <div class="logo">SHUBHAM.K</div>
             <div class="nav-links">
-                <a href="#brands">Selected Brands</a>
-                <a href="#pitch">Pitch Work</a>
-                <a href="#contact">Contact</a>
+                <a href="#story">Story</a>
+                <a href="#experience">Experience</a>
+                <a href="#brands">Brands</a>
+                <a href="#pitches">Pitches</a>
             </div>
         </nav>
 
         <!-- HERO SECTION -->
-        <section class="hero">
-            <div class="hero-tag">Portfolio</div>
-            <h1>SHUBHAM KHEDEKAR</h1>
-            <div class="hero-meta">
-                <div class="hero-desc">
-                    Senior Art Executive & Visualizer Designer translating raw strategies into high-impact visual stories. Currently based in Mumbai, India.
-                </div>
-                <div class="stat-box">
-                    <h3>5+ YRS</h3>
-                    <p>Experience</p>
-                </div>
-                <div class="stat-box">
-                    <h3>MUMBAI</h3>
-                    <p>Location</p>
-                </div>
+        <header class="hero-grid">
+            <div class="hero-left">
+                <div class="section-title">Visualizer & Art Executive</div>
+                <h1>SHUBHAM KHEDEKAR</h1>
+                <p>Crafting disruptive commercial designs, strategic campaign aesthetics, and premium visual identities with over half a decade of industry expertise.</p>
+            </div>
+            <!-- Profile Image Placeholder Slot -->
+            <div class="profile-placeholder">
+                <span class="slot-lbl">[ Profile Image Placeholder ]</span>
+                <!-- Replace the span above with your img tag later:
+                     <img src="your-photo.jpg" alt="Shubham Khedekar" style="width:100%; height:100%; object-fit:cover;"> -->
+            </div>
+        </header>
+
+        <!-- MY STORY SECTION -->
+        <section id="story" class="editorial-row">
+            <div class="section-title">01 // Story</div>
+            <div class="story-content">
+                <h2>Transforming high-level concepts into razor-sharp, unforgettable visual designs.</h2>
+                <p>Based in Mumbai, I navigate the boundary between bold art direction and target-driven visual communication. With a keen eye for modern design trends, layout structure, and spatial balance, my work transforms typical marketing assets into powerful brand moments.</p>
+                <p>Whether navigating large corporate brand guardrails or formulating a chaotic, high-energy pitch from scratch, my goal remains consistent: command attention instantly.</p>
             </div>
         </section>
 
-        <!-- BRAND SHOWCASE SECTION -->
-        <section id="brands">
-            <div class="section-header">
-                <h2>Selected Brands</h2>
-                <p>Top 6 Curated Campaigns</p>
-            </div>
-
-            <div class="grid">
-                <!-- Brand 1 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <!-- To update: Replace the span line below with your image tag when ready, e.g.: -->
-                        <!-- <img src="images/tvs-iqube.jpg" alt="Noise x TVS iQube" style="width:100%; height:100%; object-fit:cover;"> -->
-                        <span class="placeholder-text">[ Noise × TVS iQube ]</span>
+        <!-- WORK EXPERIENCE SECTION -->
+        <section id="experience" class="editorial-row">
+            <div class="section-title">02 // Experience</div>
+            <div class="timeline-container">
+                
+                <!-- Experience Item 1 -->
+                <div class="timeline-item">
+                    <div class="time-header">
+                        <div class="role-title">Senior Art Executive / Visualizer</div>
+                        <div class="duration">Present</div>
                     </div>
-                    <div class="project-info">
-                        <div>
-                            <div class="project-title">Noise × TVS iQube</div>
-                            <div class="project-category">Campaign / Art Direction</div>
-                        </div>
+                    <div class="company-name">Creative Agency / Corporate Studio</div>
+                    <div class="job-desc">Leading end-to-end design frameworks for digital transformation campaigns, major social media architectures, and massive corporate pitches. Managing visual assets from concept phases straight through production distribution.</div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="timeline-item">
+                    <div class="time-header">
+                        <div class="role-title">Visual Designer</div>
+                        <div class="duration">Previous Years</div>
+                    </div>
+                    <div class="company-name">Design Firm / Freelance Consulting</div>
+                    <div class="job-desc">Developed brand identities, editorial layouts, solar/financial firm collateral, and curated social media experiences across multiple industries. Focused heavily on vector art direction and production-ready marketing assets.</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BRAND WORK SECTION -->
+        <section id="brands" class="editorial-row">
+            <div class="section-title">03 // Brands</div>
+            <div class="showcase-grid">
+
+                <!-- Brand 1 -->
+                <div class="card">
+                    <div class="img-slot">
+                        <span class="slot-lbl">[ Noise × TVS iQube Image ]</span>
+                        <!-- Replace with image link when ready -->
+                    </div>
+                    <div class="card-details">
+                        <div class="card-title">Noise × TVS iQube</div>
+                        <div class="card-cat">Campaign</div>
                     </div>
                 </div>
 
                 <!-- Brand 2 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <span class="placeholder-text">[ BAJAJ Social Media ]</span>
+                <div class="card">
+                    <div class="img-slot">
+                        <span class="slot-lbl">[ BAJAJ Social Media Image ]</span>
                     </div>
-                    <div class="project-info">
-                        <div>
-                            <div class="project-title">BAJAJ Social Media</div>
-                            <div class="project-category">Digital Art Direction</div>
-                        </div>
+                    <div class="card-details">
+                        <div class="card-title">BAJAJ Social Media</div>
+                        <div class="card-cat">Digital Art</div>
                     </div>
                 </div>
 
                 <!-- Brand 3 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <span class="placeholder-text">[ Kyoorius Young Blood 24 ]</span>
+                <div class="card">
+                    <div class="img-slot">
+                        <span class="slot-lbl">[ Kyoorius Young Blood 24 ]</span>
                     </div>
-                    <div class="project-info">
-                        <div>
-                            <div class="project-title">Kyoorius Young Blood 24</div>
-                            <div class="project-category">Award Showcase / Branding</div>
-                        </div>
+                    <div class="card-details">
+                        <div class="card-title">Kyoorius Showcase</div>
+                        <div class="card-cat">Identity</div>
                     </div>
                 </div>
 
                 <!-- Brand 4 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <span class="placeholder-text">[ BAJAJ Lighting ]</span>
+                <div class="card">
+                    <div class="img-slot">
+                        <span class="slot-lbl">[ BAJAJ Lighting Image ]</span>
                     </div>
-                    <div class="project-info">
-                        <div>
-                            <div class="project-title">BAJAJ Lighting</div>
-                            <div class="project-category">Creative Strategy & Design</div>
-                        </div>
+                    <div class="card-details">
+                        <div class="card-title">BAJAJ Lighting</div>
+                        <div class="card-cat">Creative</div>
                     </div>
                 </div>
 
                 <!-- Brand 5 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <span class="placeholder-text">[ JJ Solar ]</span>
+                <div class="card">
+                    <div class="img-slot">
+                        <span class="slot-lbl">[ JJ Solar Image ]</span>
                     </div>
-                    <div class="project-info">
-                        <div>
-                            <div class="project-title">JJ Solar</div>
-                            <div class="project-category">Brand Identity</div>
-                        </div>
+                    <div class="card-details">
+                        <div class="card-title">JJ Solar</div>
+                        <div class="card-cat">Branding</div>
                     </div>
                 </div>
 
                 <!-- Brand 6 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <span class="placeholder-text">[ Moneyedge ]</span>
+                <div class="card">
+                    <div class="img-slot">
+                        <span class="slot-lbl">[ Moneyedge Image ]</span>
                     </div>
-                    <div class="project-info">
-                        <div>
-                            <div class="project-title">Moneyedge</div>
-                            <div class="project-category">Visual Communication</div>
-                        </div>
+                    <div class="card-details">
+                        <div class="card-title">Moneyedge</div>
+                        <div class="card-cat">Visual Strategy</div>
                     </div>
                 </div>
+
             </div>
         </section>
 
         <!-- PITCH WORK SECTION -->
-        <section id="pitch">
-            <div class="section-header">
-                <h2>Pitch Work</h2>
-                <p>Concept & Strategy Frameworks</p>
-            </div>
+        <section id="pitches" class="editorial-row">
+            <div class="section-title">04 // Pitches</div>
+            <div class="pitch-style-grid">
 
-            <div class="pitch-grid">
                 <!-- Pitch 1 -->
-                <div class="project-card pitch-card">
-                    <div class="image-container">
-                        <span class="placeholder-text">Mentos Pitch</span>
+                <div class="card">
+                    <div class="img-slot" style="aspect-ratio: 1/1;">
+                        <span class="slot-lbl">[ Mentos Pitch Slot ]</span>
                     </div>
-                    <div class="project-info">
-                        <div>
-                            <div class="project-title">Mentos</div>
-                            <div class="project-category">Campaign Concept</div>
-                        </div>
+                    <div class="card-details">
+                        <div class="card-title">Mentos</div>
+                        <div class="card-cat">Pitch</div>
                     </div>
                 </div>
 
                 <!-- Pitch 2 -->
-                <div class="project-card pitch-card">
-                    <div class="image-container">
-                        <span class="placeholder-text">Mirzapur Pitch</span>
+                <div class="card">
+                    <div class="img-slot" style="aspect-ratio: 1/1;">
+                        <span class="slot-lbl">[ Mirzapur Pitch Slot ]</span>
                     </div>
-                    <div class="project-info">
-                        <div>
-                            <div class="project-title">Mirzapur Promo</div>
-                            <div class="project-category">Creative Strategy</div>
-                        </div>
+                    <div class="card-details">
+                        <div class="card-title">Mirzapur Promo</div>
+                        <div class="card-cat">Concept</div>
                     </div>
                 </div>
 
                 <!-- Pitch 3 -->
-                <div class="project-card pitch-card">
-                    <div class="image-container">
-                        <span class="placeholder-text">Skinn Pitch</span>
+                <div class="card">
+                    <div class="img-slot" style="aspect-ratio: 1/1;">
+                        <span class="slot-lbl">[ Skinn Pitch Slot ]</span>
                     </div>
-                    <div class="project-info">
-                        <div>
-                            <div class="project-title">Skinn Fragrances</div>
-                            <div class="project-category">Visual Identity Pitch</div>
-                        </div>
+                    <div class="card-details">
+                        <div class="card-title">Skinn Fragrances</div>
+                        <div class="card-cat">Visuals</div>
                     </div>
                 </div>
 
                 <!-- Pitch 4 -->
-                <div class="project-card pitch-card">
-                    <div class="image-container">
-                        <span class="placeholder-text">Lifestyle Pitch</span>
+                <div class="card">
+                    <div class="img-slot" style="aspect-ratio: 1/1;">
+                        <span class="slot-lbl">[ Lifestyle Pitch Slot ]</span>
                     </div>
-                    <div class="project-info">
-                        <div>
-                            <div class="project-title">Lifestyle Fashion</div>
-                            <div class="project-category">Retail Strategy Campaign</div>
-                        </div>
+                    <div class="card-details">
+                        <div class="card-title">Lifestyle</div>
+                        <div class="card-cat">Retail Pitch</div>
                     </div>
                 </div>
 
                 <!-- Pitch 5 -->
-                <div class="project-card pitch-card">
-                    <div class="image-container">
-                        <span class="placeholder-text">Dove Pitch</span>
+                <div class="card">
+                    <div class="img-slot" style="aspect-ratio: 1/1;">
+                        <span class="slot-lbl">[ Dove Pitch Slot ]</span>
                     </div>
-                    <div class="project-info">
-                        <div>
-                            <div class="project-title">Dove Personal Care</div>
-                            <div class="project-category">Conceptual Direction</div>
-                        </div>
+                    <div class="card-details">
+                        <div class="card-title">Dove</div>
+                        <div class="card-cat">Campaign</div>
                     </div>
                 </div>
 
                 <!-- Pitch 6 -->
-                <div class="project-card pitch-card">
-                    <div class="image-container">
-                        <span class="placeholder-text">Sunsilk Pitch</span>
+                <div class="card">
+                    <div class="img-slot" style="aspect-ratio: 1/1;">
+                        <span class="slot-lbl">[ Sunsilk Pitch Slot ]</span>
                     </div>
-                    <div class="project-info">
-                        <div>
-                            <div class="project-title">Sunsilk Campaign</div>
-                            <div class="project-category">Social Pitch Identity</div>
-                        </div>
+                    <div class="card-details">
+                        <div class="card-title">Sunsilk</div>
+                        <div class="card-cat">Social Direction</div>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- CONTACT SECTION -->
-        <footer id="contact">
-            <div class="footer-cta">
-                Let's build something iconic.<br>
-                <a href="mailto:your.email@example.com">get in touch —</a>
-            </div>
-            <div class="social-links">
+        <!-- FOOTER -->
+        <footer>
+            <div class="cta-text">Have a project in mind?<br><a href="mailto:shubhamkhedekar@example.com" style="color: var(--accent);">Let's collaborate.</a></div>
+            <div class="links-wrap">
                 <a href="https://www.behance.net/shubhamkhedekar" target="_blank">Behance</a>
                 <a href="https://instagram.com/shubham_khedekar27" target="_blank">Instagram</a>
-                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#">LinkedIn</a>
             </div>
-            <div class="copyright">
-                &copy; 2026 Shubham Khedekar. All rights reserved. Built with GitHub Pages.
-            </div>
+            <div class="copy">&copy; 2026 Shubham Khedekar. All Rights Reserved. Hosted via GitHub Pages.</div>
         </footer>
-
     </div>
-    <!-- CONTAINER END -->
 
 </body>
 </html>
